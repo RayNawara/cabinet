@@ -3,7 +3,7 @@ class DocsController < ApplicationController
 
   # GET /docs or /docs.json
   def index
-    @docs = Doc.all
+    @docs = Doc.where(user_id: current_user).all.order(created_at: :desc)
   end
 
   # GET /docs/1 or /docs/1.json
