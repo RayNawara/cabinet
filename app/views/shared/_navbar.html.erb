@@ -10,10 +10,10 @@
           <%= link_to "Home", root_path, class: "nav-link #{'active' if current_page?(root_path)}", aria: { current: "page" } %>
         </li>
         <li class="nav-item">
-          <%= link_to "Articles", root_path, class: "nav-link" %>
+          <%= link_to "Documents", docs_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "New Article", root_path, class: "nav-link" %>
+          <%= link_to "New Document", new_doc_path, class: "nav-link" %>
         </li>
     </div>
         <li class="nav-item justify-content-end">
