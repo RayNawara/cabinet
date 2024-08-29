@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  root to: 'home#index'
   get "home/index"
+
   resources :docs
+  authenticated :user do
+    root 'docs#index', as: :authenticated_root
+  end
+
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -15,4 +19,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  root to: 'home#index'
 end
